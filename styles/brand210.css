@@ -36,41 +36,4 @@ p {
  
 }
 
-.html5{
-
-  border: solid;
-  border-color: black;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
-  background-color: blue;
-  color: black;
- }
-
-.html5:hover {
-  background-color: white;
-  color: gray;
-}
-
-
-.css{
-  border: solid;
-  border-color: black;
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
-  background-color: yellow;
-  color: black;
 	
-}
-
-.css:hover {
-  background-color: gray;
-  color: white;
-}
