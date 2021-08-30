@@ -27,12 +27,12 @@ html {
     
 }
 header > nav > ul > li > a {
-   background-color: rgba(223, 63, 35, 0.534);
+   background-color: rgba(243, 115, 30, 0.301);
    color: rgba(248, 32, 4, 0.89);
 
 }
 header > nav > ul > li > a:hover{
-   background-color: rgba(196, 101, 58, 0.842);
+   background-color: rgba(196, 102, 58, 0.336);
 }
 p {
   font-size: 20px;
