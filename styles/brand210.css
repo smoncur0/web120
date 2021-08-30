@@ -26,6 +26,7 @@ html {
     color: rgba(219, 54, 104, 0.651);
     
 }
+
 header > nav > ul > li > a {
    background-color: rgba(243, 115, 30, 0.301);
    color: rgba(248, 32, 4, 0.89);
@@ -33,6 +34,10 @@ header > nav > ul > li > a {
 }
 header > nav > ul > li > a:hover{
    background-color: rgba(196, 102, 58, 0.336);
+}
+p.first{
+   font-size: 20px;
+   text-align: center;
 }
 p {
   font-size: 20px;
@@ -43,4 +48,7 @@ p {
  
 }
 
-	
+
+
+
+
