@@ -1,63 +1,49 @@
-<!DOCTYPE html> 
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
+<!DOCTYPE html>
+<html>
 	<link rel="stylesheet" type="text/css" href="styles/brand210.css">
-	<title>
-	Sydney M. Moncur web210-N801 TOC
-	</title>
 
-</head>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
 
 <body>
-<main>	
-   <h1> 
-   Sydney M Moncur web210-N801 
-   </h1>
-   <h2>
-      Table of Contents
-   </h2>
-   
-<ul>
-   <li><a href="https://smoncur0.github.io/web210/brand.html">Brand</a></li>
-   <li><a href="https://smoncur0.github.io/web210/contract.html">Contract</a></li>
-   <li><a href="https://smoncur0.github.io/web210/introduction.html">Introduction</a></li>
-   <li><a href="https://smoncur0.github.io/web210/template.html">Template</a></li>
-
-
-</ul>
+<div w3-include-html="https://smoncur0.github.io/web210/components/header.html"></div>
+<div w3-include-html="https://smoncur0.github.io/web210/components/content.html"></div>
+<div w3-include-html="https://smoncur0.github.io/web210/components/footerNav.html"></div>
 
 
 
-
-   <br>
-	
-   <p style="background-color: antiquewhite;">
-   <a href="https://github.com/smoncur0">Github Account - </a> 
-   <a href="https://smoncur0.github.io/">Github IO - </a> 
-   <a href="https://smoncur0.github.io/web210">Github Course - </a> 
-   <a href="https://www.freecodecamp.org/smoncur0">FreeCodeCamp - </a> 
-   <a href="https://www.codecademy.com/profiles/smoncur0">Codecademy - </a> 
-   <a href="https://www.khanacademy.org/profile/smoncur0/">Khan Academy - </a> 
-   <a href="https://jsfiddle.net/user/smoncur0/fiddles/">JSFiddle - </a> 
-   <a href="https://profile.edx.org/u/smoncur0">edX - </a> 
-   <a href="https://www.linkedin.com/in//">LinkedIn - </a> 
-	   
-   <br> 
-   </p>	   
-</main>
-<footer> 
-   <br>Designed by &copy;Marie Tech
-   <br>
-<a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fsmoncur0.github.io%2Fweb210%2Findex.html&checkerrorpages=yes&showsource=yes&showoutline=yes">
-<img src= "images/html.png" alt="Validate HTML!"
-style= "border: 0; width: 88px; height: 31px" /></a>
-
-<a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsmoncur0.github.io%2Fweb210%2Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">
-<img src= "images/css.png" alt="Validate CSS!"
-style= "border: 0; width: 88px; height: 31px" /></a>
+<link rel="import"  href="smoncur0.github.io/web210/contract.html">
+<script>
+includeHTML();
+</script> 
 
 
-</footer>
 </body>
 </html>
