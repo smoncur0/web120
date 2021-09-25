@@ -16,44 +16,52 @@
       </ul>
     </nav> 
 </header>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
 
-<main>
+<body>
 
-  <h1>Brand Guide:</h1>
-  <!-- <figure>
-    <img src = "folderyourimagesarein/nameofyourimage.typeofyourimage" 
-      alt = "describe your image" 	
-      height = "howtallyourimageis" width = "howwideyourimageis" />
-    <figcaption>" "</figcaption>
-  </figure> -->
-  <p class="first"> Welcome to Syds-Recipies! This site will include some quick and<br>
-  easy recipies for you to enjoy. Please take your time and pick out your<br>
-  favorite recipies that you want to try on your own. I created this brand<br>
-  because I personally love cooking and wanted to share some of my<br>
-  recipies with you.</p>
-  <ul>
-    <li><strong>Font: Calibri</strong></li>
-    <li><strong>Colors:</strong>
-    <ol>
-      <li>Background: rgba(228, 15, 79, 0.267) pink variant</li>
-      <li>Font-color:
-      <li>Nav:
-        background-color: rbga(243, 115, 30, 0.301) * pale orange/beige, (hover rgba(196, 102, 58, 0.336)) * pale orange)
-        color: rgba(196, 101, 58, 0.842) tan
-        body: rgba(158, 32, 70, 0.945) dark magenta
-        h1: rgb(219, 54, 103) pink variant
-        h2: rgba(219, 54, 104, 0.651) pink variant
-        footer:  rgba(92, 17, 39, 0.767) pink variant
-      </li>
-      <!--<li>ADD MORE AS NEEDED</li> -->
-    </ol>
-  </li>
- </ul>
-</main>
+<div w3-include-html="https://smoncur0.github.io/web210/components/header.html"></div>
+<div w3-include-html="https://smoncur0.github.io/web210/components/brandGuide.html"></div>
+<div w3-include-html="https://smoncur0.github.io/web210/components/navLinks.html"></div>
+	
+<script>
+includeHTML();
+</script> 
+
+	
+
+	
+
 
     <footer> 
-       <br>Designed by &copy;Marie Tech
-       <br>
   <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fsmoncur0.github.io%2Fweb210%2Fbrand.html&checkerrorpages=yes&showsource=yes&showoutline=yes">
     <img src= "images/html.png" alt="Validate HTML!"
     style= "border: 0; width: 88px; height: 31px" /></a>
