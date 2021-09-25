@@ -1,0 +1,31 @@
+  <h1>Brand Guide:</h1>
+  <!-- <figure>
+    <img src = "folderyourimagesarein/nameofyourimage.typeofyourimage" 
+      alt = "describe your image" 	
+      height = "howtallyourimageis" width = "howwideyourimageis" />
+    <figcaption>" "</figcaption>
+  </figure> -->
+  <p class="first"> Welcome to Syds-Recipies! This site will include some quick and<br>
+  easy recipies for you to enjoy. Please take your time and pick out your<br>
+  favorite recipies that you want to try on your own. I created this brand<br>
+  because I personally love cooking and wanted to share some of my<br>
+  recipies with you.</p>
+  <ul>
+    <li><strong>Font: Calibri</strong></li>
+    <li><strong>Colors:</strong>
+    <ol>
+      <li>Background: rgba(228, 15, 79, 0.267) pink variant</li>
+      <li>Font-color:
+      <li>Nav:
+        background-color: rbga(243, 115, 30, 0.301) * pale orange/beige, (hover rgba(196, 102, 58, 0.336)) * pale orange)
+        color: rgba(196, 101, 58, 0.842) tan
+        body: rgba(158, 32, 70, 0.945) dark magenta
+        h1: rgb(219, 54, 103) pink variant
+        h2: rgba(219, 54, 104, 0.651) pink variant
+        footer:  rgba(92, 17, 39, 0.767) pink variant
+      </li>
+      <!--<li>ADD MORE AS NEEDED</li> -->
+    </ol>
+  </li>
+ </ul>
+    
