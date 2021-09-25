@@ -3,60 +3,55 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Sydney's web210 Template </title>
-    <link rel = "stylesheet" type = "text/css" href = "styles/default.css" />  
+    <link rel = "stylesheet" type = "text/css" href = "styles/brand210.css" />  
 </head>
+
+    
+    <script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+
 <body>
-<header>
-    <h1>Header - this is a template- CHANGE IT</h1>
-    <h6>Subheader - good place for a tagline - Change it Too!</h6>
-    <nav>
-      <ul>
-        <li><a href="#">Menu Option 1</a></li>
-        <li><a href="#">Menu Option 2</a></li>
-      </ul>
-    </nav> 
-</header>
-<-- ========================================== -->
-<main>
 
-  <h1>Name of This Page</h1>
-  <figure>
-    <img src = "folderyourimagesarein/nameofyourimage.typeofyourimage" 
-      alt = "describe your image" 	
-      height = "howtallyourimageis" width = "howwideyourimageis" />
-    <figcaption>Call me "SO AND SO"</figcaption>
-  </figure>
-  <p>This is a bullet (unordered) list (ul) with a nested ordered list (ol)</p>
-  <ul>
-    <li><strong>Primary Computer Platform:</strong> specify type of computer, and OS and version</li>
-    <li><strong>Courses I'm taking, and why:</strong>
-    <ol>
-      <li>XTZ-123- I don't want to take this but it's required for my degree</li>
-      <li>ABC-321- I'm really interested in this topic and it's part of my program of study.</li>
-      <li>ADD MORE AS NEEDED</li>
-    </ol>
-  </li>
-  <li><strong>Funny Story to remember me by:</strong> put something here, or tell your favorite joke, or whatever....</li>
-  <li><strong>I'd also like to share:</strong> Add anything else you'd like to share (i.e. instagram, facebook, your own website or company, interesting tidbits, etc...</li>
-  </ul>
-</main>
-<-- ========================================== -->
-    <footer> 
-       Bazzom bazang... we do the bestest! 
-       <br/>Designed by &copy;Icabad Enterprises
-       <br/>
-       <!-- you need to change the name of your image link to match the one you are using -->
-  <a href = "http://validator.w3.org/check?uri=referer">
-         <img src ="images/button_validation_html5.gif"  
-                 alt ="Validate HTML!" 
-              style = "border: 0; width: 88px; height: 31px"  />
-  </a> 
-  <a href = "http://jigsaw.w3.org/css-validator/check/referer">
-    <img src = "images/button_validation_css"
-            alt = "Validate CSS!" 
-            style = "border: 0; width: 88px; height: 31px"/>
-  </a>
+<div w3-include-html="https://smoncur0.github.io/web210/components/header.html"></div>
+<div w3-include-html="https://smoncur0.github.io/web210/components/tempText.html"></div>
+<div w3-include-html="https://smoncur0.github.io/web210/components/navLinks.html"></div>
+	
+<script>
+includeHTML();
+</script> 
+    <footer>
+<a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fsmoncur0.github.io%2Fweb210%2Ftemplate.html">W3C HTML5</a>
 
+<a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsmoncur0.github.io%2Fweb210%2Ftemplate.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en">W3C CSS</a>
+	
+        <p>Page built by MarieTech</p>
 </footer>
 </body>
 </html>
