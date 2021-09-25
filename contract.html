@@ -2,48 +2,55 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="styles/default.css">
+	<link rel="stylesheet" type="text/css" href="styles/brand210.css">
 	<title>
 	Sydney M. Moncur web210-N801 COURSE CONTRACT 
 	</title>
 
 </head>
-
 <body>
-<main>	
-   <h1> 
-   Sydney M Moncur web210-N801
-   </h1>
-   <h2>
-   COURSE CONTRACT 
-   </h2>
-   
-<p>I, <a href="introduction.html">Sydney M Moncur</a> agree to abide by the terms in my 
-Fall 2021 web210-N801 Web Markup Scripting with my instructor, 
-D.I. von Briesen.</p>
-<p>I understand that all work that I do on my school and 
-personal websites will be publicly available to the world. 
-I will not put information there that is inappropriate for 
-schoolwork, or that I wish to keep private.</p>
-<p>I also understand that it is my work that counts for attendance, 
-not logins or showing up for class. As such, failure to turn in 
-assignments may show as an absences.</p>
-<p>Signed: Sydney M. Moncur, 18 August 2021</p>
-   <br>
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }      
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+};
+</script>
+
+
+
+<div w3-include-html="https://smoncur0.github.io/web210/components/header.html"></div>
+<div w3-include-html="https://smoncur0.github.io/web210/components/contractText.html"></div>
+<div w3-include-html="https://smoncur0.github.io/web210/components/navLinks.html"></div>
 	
-   <p>
-   <a href="https://github.com/smoncur0">Github Account - </a> 
-   <a href="https://smoncur0.github.io/">Github IO - </a> 
-   <a href="https://smoncur0.github.io/web210">Github Course - </a> 
-   <a href="https://www.freecodecamp.org/smoncur0">FreeCodeCamp - </a> 
-   <a href="https://www.codecademy.com/profiles/smoncur0">Codecademy - </a> 
-   <a href="https://www.khanacademy.org/profile/smoncur0/">Khan Academy - </a> 
-   <a href="https://jsfiddle.net/user/smoncur0/fiddles/">JSFiddle - </a> 
-   <a href="https://profile.edx.org/u/smoncur0">edX - </a> 
-   <a href="https://www.linkedin.com/in//">LinkedIn - </a> 
-	   
-   <br> 
-   </p>	   
+<script>
+includeHTML();
+</script> 
+
+  
+	
 </main>
 <footer>
 <a href="https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fsmoncur0.github.io%2Fweb210%2Fcontract.html">W3C HTML5</a>
