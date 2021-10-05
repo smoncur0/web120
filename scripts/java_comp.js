@@ -27,5 +27,6 @@ function includeHTML() {
   }
 };
 
+includeHTML();
 
 
