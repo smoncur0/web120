@@ -83,11 +83,11 @@ ul > li > a:hover{
    background-color: rgba(196, 102, 58, 0.336);  
 }
 
-#links{
+p#links{
 	text-align: center;
 	background-color: rgba(196, 102, 58, 0.336);
 }
-#links:hover{
+p#links > a:hover{
    
-   background-color: rgba(243, 115, 30, 0.301);
+   background-color: rgba(241, 219, 204, 0.863);
 }
